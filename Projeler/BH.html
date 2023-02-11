@@ -1,0 +1,62 @@
+<link href="../prism.css" rel="stylesheet" />
+<script src="../prism.js"></script>
+
+<h1>Creating your first project</h1>
+<h2>The basics</h2>
+<p>With version 0.3.5, command rules are no longer irregular, learning these layouts makes it easy to use.</p>
+<h2>Creating a project</h2>
+<p>Keeping simplicity at the forefront is our goal, so writing a simple screen is simple.</p>
+<pre><code class="language-cmd">set $windowName (window):
+&quot;Title&quot;: &quot;Hello World&quot;,
+&quot;Width&quot;: &quot;335&quot;,
+&quot;Height&quot;: &quot;150&quot;
+;
+
+show $windowName;
+</code></pre>
+<p><img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2FRTwZ5CbGgfubPlKubHAA%2Fout.png?alt=media&amp;token=7d3d0c57-8f79-4688-8aa3-2b5c4d9885a0" alt="Sample" /></p>
+<h2>Creating GUI</h2>
+<pre><code class="language-cmd">
+//Made with BH
+
+set $windowName (window):
+&quot;Title&quot;: &quot;Clock&quot;,
+&quot;Width&quot;: &quot;480&quot;,
+&quot;Height&quot;: &quot;320&quot;,
+&quot;ResizeMode&quot;: &quot;NoResize&quot;,
+&quot;Loaded&quot;: &quot;Window_Loaded&quot;
+;
+
+com new method -&gt; $windowName as cs:
+&quot;name&quot;: &quot;Window_Loaded&quot;,
+&quot;args&quot;: &quot;sender, e&quot;,
+&quot;code&quot;: &quot;
+	Icon = new BitmapImage(new Uri(\&quot;$srcpath\\\\clean.ico\&quot;));
+&quot;.
+;
+
+com new method -&gt; $windowName as cs:
+&quot;name&quot;: &quot;Btn_Clicked&quot;,
+&quot;args&quot;: &quot;sender, e&quot;,
+&quot;code&quot;: &quot;
+	Detail.Content = Batch.Input(\&quot;bat detail 17\&quot;).Stdout.ToString();
+&quot;.
+;
+
+app new comp -&gt; $windowName as (Button):
+&quot;inner&quot;: &quot;Get Info For Gecho&quot;,
+&quot;Name&quot;: &quot;Getbtn&quot;,
+&quot;VerticalAlignment&quot;: &quot;Top&quot;,
+&quot;Click&quot;: &quot;Btn_Clicked&quot;,
+&quot;Margin&quot;: &quot;62,10,62,0&quot;.
+;
+
+app new comp -&gt; $windowName as (Label):
+&quot;Name&quot;: &quot;Detail&quot;,
+&quot;Margin&quot;: &quot;0,30,0,0&quot;.
+;
+
+show $windowName;
+</code></pre>
+<p><img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2FF4ksutl1EJPWbyR4qIQt%2Fnc.png?alt=media&amp;token=92c3a896-23fc-43ce-8c58-81a8b8a683c6" alt="Sample" /></p>
+<p><img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2Fz1CK8RklLliR3NElogfb%2Fc.png?alt=media&amp;token=06a5e17b-f657-42e5-83cb-7d65fa3f42a5" alt="Sample" /></p>

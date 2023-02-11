@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="prism.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(function() {
+       $("#ResponsiveForm").load("Projeler/ResponsiveForm.html");
+       $("#Azyeb").load("Projeler/Azyeb.html");
+       $("#BatCenter").load("Projeler/BatCenter.html");
+       $("#BadApple").load("Projeler/BadApple.html");
+       $("#gEcho").load("Projeler/gEcho.html");
+       $("#BH").load("Projeler/BH.html");
+       $("#CmdFunc").load("Projeler/CmdFunc.html");
+    });
+ </script>
+  <title>Kodluyoruz Ödevi</title>
+</head>
+<body>
+    <!--Siteyi açtığımızda adınız ve soyadınızı başlık şeklinde gösterir.-->
+    <h1>Murat Kirazkaya</h1>
+    <!--Ad-Soyadın altındaki alt başlık olarak Hakkımda yazısıdır.-->
+    <h3>Hakkımda</h3>
+    <!--Altına paragraf içerisinde kısaca kendimi tanıttım.-->
+    <p>Merhabalar, ben Murat 17 yaşındayım, güncel olarak dotnet teknolojisi   üzerinde projeler yapıyorum ve front-end öğrenmeye çalışıyorum, güzel bir     front-end temeliyle ASP.NET'e girmek istiyorum, proje odaklarım genel olarak    kullanımı kolaylaştıran c# projeleri ve batch teknolojileri, +4 yıldır bu  sektördeyim ve insanlara yardım etmeyi seviyorum, herkese başarılar dilerim  🙂.</p>
+
+    <h2>Projelerim (Güncelden eskiye)</h2>
+
+    <!--Bir tık farklı birşeyler denedim 🙂-->
+    <div class="css-toggle">ResponsiveForm
+        <span>
+           <!-- head'daki scripte referans veriyor --> 
+            <div id="ResponsiveForm"></div>
+        </span>
+    </div>
+    <div class="css-toggle">Azyeb<span><div id="Azyeb"></div></span></div>
+    <div class="css-toggle">BatCenter<span><div id="BatCenter"></div></span></div>
+    <div class="css-toggle">BadApple<span><div id="BadApple"></div></span></div>
+    <div class="css-toggle">gEcho<span><div id="gEcho"></div></span></div>
+    <div class="css-toggle">BH<span><div id="BH"></div></span></div>
+    <div class="css-toggle">CmdFunc<span><div id="CmdFunc"></div></span></div>
+
+    <script src="prism.js"></script>
+</body>
+</html>

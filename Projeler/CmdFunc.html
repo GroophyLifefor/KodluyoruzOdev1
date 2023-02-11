@@ -1,0 +1,30 @@
+<link href="../prism.css" rel="stylesheet" />
+<script src="../prism.js"></script>
+
+<p>Welcome to the CmdFunc_NT wiki!</p>
+<p>Starting with importing libraries</p>
+<pre><code class="language-cmd">using Groophy;
+</code></pre>
+<p>A quick example of usage</p>
+<pre><code class="language-cmd">CmdFunc cmd = new CmdFunc(&quot;C:\\&quot;, Structes.ShellType.ChairmanandManagingDirector_CMD, false);
+
+var _out = cmd.Input(&quot;echo hi&quot;);
+</code></pre>
+<pre><code class="language-cmd">CmdFunc(
+        &quot;C:\\&quot;                                               -&gt; Working directory
+        Structes.ShellType.ChairmanandManagingDirector_CMD   -&gt; Type of Instance [Cmd, PowerShell]
+        false                                                -&gt; Debug mode (false is recommended)
+       ) 
+</code></pre>
+<pre><code class="language-cmd">_out(
+        IsError                                              -&gt; Error value [True, false]
+        ProcID                                               -&gt; Process ID of Instance [int]
+        Std_Input                                            -&gt; Your input
+        Std_Out                                              -&gt; Output of your execute [StringBuilder] (Use 'ToString()' for get string)
+        Stopwatch                                            -&gt; Time of your execute [Stopwatch]
+    )
+
+/-i---|-ID--|-Err-|-MS--|-Stdio--------------|-vp--|-vname----|-stdout-----------------------\
+|0    |2584 |False|0,114|echo hi             |False|          |hi,                           |
+\-----|-----|-----|-----|--------------------|-----|----------|------------------------------/
+</code></pre>

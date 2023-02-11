@@ -1,0 +1,39 @@
+<link href="../prism.css" rel="stylesheet" />
+<script src="../prism.js"></script>
+
+<h1>Azyeb</h1>
+<p>Azyeb, çeşitli kurallarla hareket ederek size istediğiniz sonucu istediğiniz şekilde verir.</p>
+<h1>Example of Usage</h1>
+<pre><code class="language-json">{
+  &quot;NewRuleGroup&quot;: [
+	{
+	  &quot;Text&quot;: &quot;char is {chars}\r\n&quot;,
+	  &quot;Rules&quot;: [
+		{
+		  &quot;RuleAsString&quot;: &quot;c[â-ê,chars]&quot;
+		}
+	  ],
+	  &quot;SaveAs&quot;: &quot;&quot;,
+	  &quot;FixDuplicates&quot;: false
+	}
+  ]
+}
+</code></pre>
+<pre><code class="language-md">
+    var groupInstance = new Azyeb.GroupInstance();
+    groupInstance.LoadConfigFromJsonFile("debug.json");
+    string exec = Azyeb.Runner.Run(groupInstance);
+    Console.WriteLine(exec);
+</code></pre>
+<pre><code>char is â↓
+char is ã↓
+char is ä↓
+char is å↓
+char is æ↓
+char is ç↓
+char is è↓
+char is é↓
+char is ê↓
+</code></pre>
+<p><code>↓ meaning goes to newline.</code></p>
+<p>Ayrıca, Azyeb ismi rasgele bir isim değil. hoşlandığım kızın isminin tersten yazılışı 🙂.</p>
